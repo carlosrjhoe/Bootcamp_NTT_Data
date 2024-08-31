@@ -124,5 +124,6 @@ def main():
         elif opcao == 'Q':
             break
 
+
 if __name__ == '__main__':
     main()
