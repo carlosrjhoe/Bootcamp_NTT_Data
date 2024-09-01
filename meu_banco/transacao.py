@@ -1,8 +1,17 @@
 from abc import ABC
 from abc import abstractmethod
+from datetime import datetime
 
 
 class Transacao(ABC):
+    def __init__(self, valor: float):
+        self.__valor = valor
+        self.data_hora = datetime.now()
+
+    @property
+    def valor(self):
+        return self.__valor
+
     @abstractmethod
     def registrar(self, conta):
         pass
@@ -10,29 +19,33 @@ class Transacao(ABC):
 
 class Deposito(Transacao):
     def __init__(self, valor: float):
-        self.__valor = valor
+        super().__init__(valor)
 
-    @property
-    def valor(self):
-        return self.__valor
+    # @property
+    # def valor(self):
+    #     return self.__valor
 
     def registrar(self, conta):
-        if conta.depositar(self.__valor):
+        if conta.depositar(self.valor):
             conta.historico.adicionar_transacao(
-                f'Depósito de R${self.__valor:.2f}'
+                tipo='Depósito',
+                valor=self.valor,
+                data_hora=self.data_hora
             )
 
 
 class Saque(Transacao):
     def __init__(self, valor: float):
-        self.__valor = valor
+        super().__init__(valor)
 
-    @property
-    def valor(self):
-        return self.__valor
+    # @property
+    # def valor(self):
+    #     return self.__valor
 
     def registrar(self, conta):
-        if conta.sacar(self.__valor):
+        if conta.sacar(self.valor):
             conta.historico.adicionar_transacao(
-                f'Saque de R${self.__valor:.2f}'
+                tipo='Saque',
+                valor=self.valor,
+                data_hora=self.data_hora
             )
