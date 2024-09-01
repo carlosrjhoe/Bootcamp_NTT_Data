@@ -33,6 +33,6 @@ class Saque(Transacao):
 
     def registrar(self, conta):
         if conta.sacar(self.__valor):
-            conta.historico.adinionar_transacao(
+            conta.historico.adicionar_transacao(
                 f'Saque de R${self.__valor:.2f}'
             )
