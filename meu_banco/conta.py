@@ -46,3 +46,35 @@ class Conta:
 
     def exibir_saldo(self):
         return self.__saldo
+
+
+class ContaCorrente(Conta):
+    def __init__(self, numero: int, agencia: str, cliente: Cliente, limite: float, limite_saques: int):
+        super().__init__(numero, agencia, cliente)
+        self.__limite = limite
+        self.__limite_saques = limite_saques
+        self.__saques_realizados = 0
+
+    @property
+    def limite_saques(self):
+        return self.__limite
+
+    @property
+    def limite_saques(self):
+        return self.__limite_saques
+
+    @property
+    def limite_saques_realizados(self):
+        return self.__limite_saques_realizados
+
+    def sacar(self, valor: float) -> bool:
+        if self.__saques_realizados >= self.__limite_saques_realizados:
+            print(f'Limite sde saques diários atingido.')
+            return False
+        elif valor > (self.saldo + self.__limite):
+            print(f'Saldo insuficiente.')
+            return False
+        elif super().saque(valor):
+            self.__saques_realizados += 1
+            return True
+        return False
