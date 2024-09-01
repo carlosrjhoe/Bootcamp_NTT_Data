@@ -56,7 +56,7 @@ class ContaCorrente(Conta):
         self.__saques_realizados = 0
 
     @property
-    def limite_saques(self):
+    def limite(self):
         return self.__limite
 
     @property
@@ -64,17 +64,17 @@ class ContaCorrente(Conta):
         return self.__limite_saques
 
     @property
-    def limite_saques_realizados(self):
-        return self.__limite_saques_realizados
+    def saques_realizados(self):
+        return self.__saques_realizados
 
     def sacar(self, valor: float) -> bool:
-        if self.__saques_realizados >= self.__limite_saques_realizados:
+        if self.__saques_realizados >= self.__limite_saques:
             print(f'Limite sde saques diários atingido.')
             return False
         elif valor > (self.saldo + self.__limite):
             print(f'Saldo insuficiente.')
             return False
-        elif super().saque(valor):
+        elif super().sacar(valor):
             self.__saques_realizados += 1
             return True
         return False
