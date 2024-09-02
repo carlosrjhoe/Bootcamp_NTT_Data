@@ -22,3 +22,14 @@ Principais mudanças:
 - Visualização de Extrato: Também incluímos a opção de visualizar o extrato de cada conta, mostrando todas as movimentações e o saldo atual.
 
 Essas melhorias tornam o sistema mais completo e pronto para gerenciar diferentes contas e usuários.
+
+# Desafio 03: Mudança de Paradigma Funcional para Programação Orientada a Objetos (POO) e modularização
+
+Principais mudanças:
+
+A decisão de adotar POO foi guiada pela necessidade de melhorar a organização e a manutenção do código, além de facilitar a reutilização de componentes e a expansão futura do sistema. Com POO, conseguimos encapsular responsabilidades em classes, promovendo um design modular que se alinha mais naturalmente ao modelo de um sistema bancário, onde conceitos como "Conta", "Transação" e "Histórico" são abstrações claras e independentes.
+
+- Encapsulamento: Ao encapsular atributos e comportamentos dentro de classes, reduzimos a complexidade do código e facilitamos o rastreamento de estados e a depuração.
+- Reutilização de Código: A introdução de classes base, como Transacao, permite que diferentes tipos de transações (como Deposito e Saque) compartilhem código comum, reduzindo redundâncias.
+- Extensibilidade: Com POO, ficou mais fácil adicionar novos tipos de transações ou funcionalidades ao sistema, simplesmente estendendo as classes existentes.
+- Histórico de Transações: Agora, cada transação registra automaticamente a data e hora em que foi realizada, armazenando esses dados no histórico da conta de forma organizada.
