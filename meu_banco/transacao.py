@@ -21,10 +21,6 @@ class Deposito(Transacao):
     def __init__(self, valor: float):
         super().__init__(valor)
 
-    # @property
-    # def valor(self):
-    #     return self.__valor
-
     def registrar(self, conta):
         if conta.depositar(self.valor):
             conta.historico.adicionar_transacao(
@@ -37,10 +33,6 @@ class Deposito(Transacao):
 class Saque(Transacao):
     def __init__(self, valor: float):
         super().__init__(valor)
-
-    # @property
-    # def valor(self):
-    #     return self.__valor
 
     def registrar(self, conta):
         if conta.sacar(self.valor):
