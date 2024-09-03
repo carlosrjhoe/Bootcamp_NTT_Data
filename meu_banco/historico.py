@@ -25,3 +25,4 @@ class Historico:
                 f'{transacao["tipo"]} de R$'
                 f'{transacao["valor"]:.2f} em {transacao["data_hora"]}'
             )
+            print('-' * 60)
