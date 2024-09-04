@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 class Cliente:
     def __init__(self, endereco: str):
         self.__endereco = endereco
@@ -8,7 +11,11 @@ class Cliente:
         return self.__endereco
 
     def realiza_transacao(self, conta, transacao):
-        conta.historico.adicionar_transacao(transacao)
+        conta.historico.adicionar_transacao(
+            tipo=transacao.__class__.__name__,
+            valor=transacao.valor,
+            data_hora=datetime.now()
+        )
         transacao.registrar(conta)
 
     def adicionar_conta(self, conta):

@@ -1,7 +1,7 @@
-from cliente import PessoaFisica
-from conta import ContaCorrente
-from transacao import Deposito
-from transacao import Saque
+from meu_banco.cliente import PessoaFisica
+from meu_banco.conta import ContaCorrente
+from meu_banco.transacao import Deposito
+from meu_banco.transacao import Saque
 
 
 class Banco:
