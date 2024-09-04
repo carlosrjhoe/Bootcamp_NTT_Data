@@ -68,8 +68,11 @@ class ContaCorrente(Conta):
         return self.__saques_realizados
 
     def sacar(self, valor: float) -> bool:
+        if valor <= 0:
+            print(f'Valor de saque inválido.')
+            return False
         if self.__saques_realizados >= self.__limite_saques:
-            print(f'Limite sde saques diários atingido.')
+            print(f'Limite de saques diários atingido.')
             return False
         elif valor > (self.saldo + self.__limite):
             print(f'Saldo insuficiente.')
