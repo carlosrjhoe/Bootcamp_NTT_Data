@@ -34,3 +34,18 @@ def test_conta_sacar_valor_invalido(conta):
     resultado = conta.sacar(-100.0)
     assert resultado == False
     assert conta.saldo == 0.0
+
+
+def test_conta_corrente_limite_saque(conta):
+    conta.depositar(200.0)
+    resultado = conta.sacar(100.0)
+    assert resultado == True
+    assert conta.saldo == 100.0
+
+
+def test_conta_corrente_limite_saques(conta):
+    conta.depositar(200.0)
+    conta.sacar(100.0)
+    conta.sacar(100.0)
+    resultado = conta.sacar(100.0)
+    assert resultado == False

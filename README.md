@@ -33,3 +33,12 @@ A decisão de adotar POO foi guiada pela necessidade de melhorar a organização
 - Reutilização de Código: A introdução de classes base, como Transacao, permite que diferentes tipos de transações (como Deposito e Saque) compartilhem código comum, reduzindo redundâncias.
 - Extensibilidade: Com POO, ficou mais fácil adicionar novos tipos de transações ou funcionalidades ao sistema, simplesmente estendendo as classes existentes.
 - Histórico de Transações: Agora, cada transação registra automaticamente a data e hora em que foi realizada, armazenando esses dados no histórico da conta de forma organizada.
+
+# Desafio 04: (Pessoal) Testes Implementados Obs: Em construção
+- Neste projeto, implementei testes para garantir que o sistema funcione corretamente. Os testes são uma parte fundamental para assegurar que todas as funcionalidades estejam funcionando conforme o esperado.
+
+- Como um profissional iniciante em QA, estou aplicando o conhecimento adquirido na graduação em Análise e Desenvolvimento de Sistemas e o que estou aprendendo na especialização em testes ágeis. Esses testes ajudam a verificar se as operações bancárias, como depósitos e saques, são realizadas corretamente e se os dados são manipulados de forma adequada.
+
+- Os testes foram feitos de forma a garantir que cada funcionalidade seja verificada isoladamente, permitindo identificar rapidamente onde podem ocorrer problemas e garantindo a qualidade do sistema.
+
+- Estou continuamente aprimorando meus conhecimentos e habilidades para garantir que o sistema não apenas funcione, mas funcione de maneira confiável e eficiente.
